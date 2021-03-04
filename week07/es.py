@@ -1,7 +1,7 @@
 # Program that reads in a text file and outputs the number of e's it contains
 # Author: David Maguire
 
-# Impot sys module to take filename from command line argument
+# Import sys module to take filename from command line argument
 import sys
 
 # Assign target filename to filename in program (sys.argv[0] is this program script, sys.argv[1] is first command line argument)
