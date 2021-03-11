@@ -9,4 +9,4 @@ rawString = input("Please enter a sentance: ")
 reverseSkip = rawString[::-2]
 
 # Print result
-print(reverse)
+print(reverseSkip)
