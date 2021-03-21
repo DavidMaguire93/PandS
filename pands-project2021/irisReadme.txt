@@ -1,0 +1,2 @@
+21.03.21 	- Downloaded Iris CSV from https://datahub.io/machine-learning/iris as an alternative to loading the dataset through a function
+           	- Wrote code for simple row / column viewing for preliminary study, code researched from https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
