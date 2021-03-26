@@ -11,24 +11,27 @@ import numpy as np
 import pandas as pd
 
 # Load csv
-iris = pd.read_csv("iris_csv.csv") 
+iris = pd.read_csv("iris.csv") 
 
-# Printout of data (Comment out when not needed)
+# Convert to dataframe and add columns
+iris = pd.DataFrame(iris)
+iris.columns = ["sepallength","sepalwidth","petallength","petalwidth","class"]
 
+# Comment out when not needed
 #print(iris)
-#print(iris.head())
-#print(iris.sample(10))
 
-specificCols = iris[["sepallength", "class"]]
 
-#print(specificCols.head(10))
+# Simple analysis
+irismean = iris.mean()
+irismedian = iris.median()
+irismin = iris.min()
+irismax = iris.max()
 
-# Some info about columns and shape (rows, columns) of dataset
-#print(iris.columns)
-#print(iris.shape)
+print(irismean)
+print(irismedian)
+print(irismin)
+print(irismax)
 
-# Print complete info of specific row
-print(iris.iloc[5])
-
-# Print row by search
-print(iris.loc[iris["class"] == "Iris-setosa"])
+# Simple histograph of all variables
+iris.hist(bins = 30)
+plt.show()
