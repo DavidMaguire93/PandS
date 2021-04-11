@@ -70,5 +70,5 @@ Points, styles and colours - 	https://matplotlib.org/stable/api/_as_gen/matplotl
 10/03/21 - Creation and upload of plottask.py
 	 - Changed the title of collatz.py from pythonCollatz.py to collatz.py
 11/03/21 - Fixed error in secondString.py function name
-22/03/21 - Added Seaborn graphs to plottask.py
+22/03/21 - Messed around with Seaborn graphs in plottask.py. Commented out as may add to later on.
 

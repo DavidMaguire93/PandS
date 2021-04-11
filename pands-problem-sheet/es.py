@@ -20,4 +20,4 @@ with open (filename,'r') as fileECount:
             eCount += 1
 
 # Print resulting count
-    print(eCount)
+print(eCount)
