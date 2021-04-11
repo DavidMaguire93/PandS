@@ -1,5 +1,5 @@
 # bmi.py
-# Programme that calculates bmi
+# Program that calculates bmi
 # Author: David Maguire
 # Output was compared against calculator from https://www.calculator.net/bmi-calculator.html
 
