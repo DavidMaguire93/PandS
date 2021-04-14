@@ -59,10 +59,14 @@ For loops: https://www.w3schools.com/python/python_for_loops.asp
 Reverse function: https://www.w3schools.com/python/ref_func_reversed.asp
 
 			3.4 Week 4 - collatz.py
-
+Program that asks the user to input any positive integer and outputs the successive values of the following calculation. At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one
+Have the program end if the current value is one.
+This program introduce while loops and if / else funtions. These were researched at https://www.w3schools.com/python/python_while_loops.asp.
 
 			3.5 Week 5 - weekday.py
-
+Program that outputs whether or not today is a weekday. This program involved arrays and extra research into specific functions was needed. The strftime and datetime functions were researched at https://www.programiz.com/python-programming/datetime/strftime.
+The datetime.today funtions gets the current date. This is then converted to a specific format by the strftime function. In this case, adding the directive of %A converts the date to the full name of the day of the week. Other directive for different formats
+can be found in the link above.
 	
 			3.6 Week 6 - squareroot.py
 
