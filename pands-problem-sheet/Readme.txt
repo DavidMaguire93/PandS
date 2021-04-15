@@ -14,10 +14,6 @@ Contents
 	3.7 	Week 7 - es.py
 	3.8 	Week 8 - plottask.py
 4.	Changelog
-5.	Conclusion 
-
-				
-
 
 				1. Introduction
 
@@ -61,7 +57,7 @@ Reverse function: https://www.w3schools.com/python/ref_func_reversed.asp
 			3.4 Week 4 - collatz.py
 Program that asks the user to input any positive integer and outputs the successive values of the following calculation. At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one
 Have the program end if the current value is one.
-This program introduce while loops and if / else funtions. These were researched at https://www.w3schools.com/python/python_while_loops.asp.
+This program introduce while loops and if / else functions. These were researched at https://www.w3schools.com/python/python_while_loops.asp.
 
 			3.5 Week 5 - weekday.py
 Program that outputs whether or not today is a weekday. This program involved arrays and extra research into specific functions was needed. The strftime and datetime functions were researched at https://www.programiz.com/python-programming/datetime/strftime.
@@ -69,14 +65,18 @@ The datetime.today funtions gets the current date. This is then converted to a s
 can be found in the link above.
 	
 			3.6 Week 6 - squareroot.py
-
+Program that takes a positive floating-point number as input and outputs an approximation of its square root. This could not be done with the built in Python funtion and therefore required some research into the algorithm required to get the square root of
+a number. The equation to do so was acquired from https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/#:~:text=Let%20N%20be%20any%20number,correct%20square%20root%20of%20N. The equation is applied to the original number as a first guess.
+The answer to this equation is then used as the next guess, which is inputted into the equation again to get the next guess and so on. Originally, I used a for loop with an arbitrary number of iterations that was large enough to work and any non-massive number.
+After some advice, I changes the program to iterate through the equation using a while loop until a certain precision criteria was met. The precision chosen was within 0.01 as the answer was being rounded down to .1.
 
 			3.7 Week 7 - es.py
-
+Program that reads in a text file and outputs the number of e's it contains. This program required some research into the sys function, specifically the sys.argv function. This was researched at https://www.knowledgehut.com/blog/programming/sys-argv-python-examples.
+Also new in this program was the introduction of the with statement in python, using with open to read the file and assign it to a variable. This was researched at https://www.geeksforgeeks.org/with-statement-in-python/
 
 			3.8 Week 8 - plottask.py
 
-A program that that displays a plot of the functions f(x)=x, g(x)=x2 and h(x)=x3 in the range [0, 4] on the one set of axes.
+A program that that displays a plot of the functions f(x)=x, g(x)=x2 and h(x)=x3 in the range [0, 4] on the one set of axes. I had experimented with some Seaborn functions, but preffered the simplicity of the matplotlib code
 
 Information on the different plot elements were obtained primarily from matplotlib.org:
 
@@ -84,6 +84,8 @@ Axis ticks - 			https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xtic
 Legend - 			https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.legend.html
 Grid - 				https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html
 Points, styles and colours - 	https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
+
+Seaborn fuctions were researced at https://seaborn.pydata.org/generated/seaborn.lineplot.html
 
 
 
@@ -100,7 +102,9 @@ Points, styles and colours - 	https://matplotlib.org/stable/api/_as_gen/matplotl
 	 - Changed the title of collatz.py from pythonCollatz.py to collatz.py
 11/03/21 - Fixed error in secondString.py function name
 22/03/21 - Messed around with Seaborn graphs in plottask.py. Commented out as may add to later on.
-11/04/21 - Included more comments and references in bmi.py
+11/04/21 - Included more comments and references in bmi.py and secondstring.py
+14/04/21 - Included more comments and references in collatz.py and weekday.py
+15/04/21 - Included more comments and referneces in squareroot.py, es.py
+	 - Changed code in squareroot.py to iterate until precision was met
 
-5. Conclusion
 

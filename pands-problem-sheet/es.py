@@ -1,4 +1,5 @@
 # Program that reads in a text file and outputs the number of e's it contains
+# sys.argv function researched at https://www.knowledgehut.com/blog/programming/sys-argv-python-examples
 # Author: David Maguire
 
 # Import sys module to take filename from command line argument
@@ -10,7 +11,7 @@ filename = sys.argv[1]
 # Assign a count to 0 to add as e's are encountered
 eCount = 0
 
-# Open and read file
+# Open and read file using with open and assign to variable 'data'
 with open (filename,'r') as fileECount:
     data = fileECount.read()
 

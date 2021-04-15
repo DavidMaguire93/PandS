@@ -1,12 +1,14 @@
 # weekday.py
 # Program that outputs whether or not today is a weekday
+# strftime researched at https://www.programiz.com/python-programming/datetime/strftime
 # Author: David Maguire
 
 # Import datetime for today's date function
 import datetime
 
 # Use strftime to get a string of today's date
-# %A is a string format for the name of the day of the given date
+# Use datetime.today() gets today's date. strf converts date to specific format depending on % directive
+# %A is a string format for the name of the day of the given date (Long version of day e.g. Monday, %a is short version e.g. Mon)
 today = datetime.datetime.today().strftime('%A')
 
 # Create list of weekdays and weekend (weekend is not actually needed)

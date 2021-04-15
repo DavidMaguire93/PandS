@@ -1,5 +1,7 @@
 # plottask.py
 # Program called plottask.py that displays a plot of the functions f(x)=x, g(x)=x2 and h(x)=x3 in the range [0, 4] on the one set of axes
+# Matplotlib functions researched at https://matplotlib.org/stable/api/pyplot_summary.html
+# Seaborn functions researched at https://seaborn.pydata.org/generated/seaborn.lineplot.html
 # Author: David Maguire
 
 # Import numpy and matplotlib.pyplot
@@ -16,6 +18,7 @@ gx = x * x
 hx = x ** 3
 
 """
+Unused seaborn plots
 
 sns.lineplot(x = x,y = fx, hue = "function")
 sns.lineplot(x = x,y = gx)
