@@ -1,4 +1,4 @@
-Programming and Scripting Weekly Task Readme
+Programming and Scripting Weekly Task Project Readme
 
 Contents
 
@@ -15,15 +15,47 @@ Contents
 	3.8 	Week 8 - plottask.py
 4.	Changelog
 
-				1. Introduction
 
-				2. Resources
 
-				3. Submissions
+								1. Introduction
 
-			3.1 Week 1 - Introduction & GitHub Account Creation
+This project involved completing 8 weekly tasks involving Python. As the difficulty of the tasks progressed, more elements of python were introduce. These included variables, functions, loops, arrays, with statements and plots.
+The vast majority of this project was tested and completed on VisualStudio code using Anaconda. Weekly task were then uploaded to a personal GitHub repository. This readme will outline the resources used to create and research 
+the code needed as well as a brief introduction to each weekly task.
 
-The Weekly task for week 1 involved downloading the required software, pulling sample code from GitHub creating a GitHub account and adding, commiting and push an initial GitHub depository.
+
+
+								2. Resources
+
+Below are links to the software used in this course / for this project:
+
+cmder: https://cmder.net/
+Notepad++: http://notepad-plus-plus.org/
+Anaconda: https://www.anaconda.com/products/individual
+VS Code: https://code.visualstudio.com/Download
+Git: https://git-scm.com/downloads
+
+I found the following websites extremely useful in researching elements of Python need for the tasks:
+
+W3 Schools: https://www.w3schools.com/
+Real Python: https://realpython.com/
+Learn Python: https://www.learnpython.org/
+Geeks for Geeks: https://www.geeksforgeeks.org/
+Stack Overflow: https://stackoverflow.com/
+
+Links to individual sections of some of these websites can be found in the submissions section.
+As well as the above websites, I found the book 'A Whirlwind Tour of Python' useful for researching:
+
+Vanderplas, J., 2016. A Whirlwind Tour of Python. O'Reilly Media, Inc.
+
+
+
+
+								3. Submissions
+
+								3.1 Week 1 - Introduction & GitHub Account Creation
+
+The Weekly task for week 1 involved downloading the required software, pulling sample code from GitHub creating a GitHub account and adding, committing and push an initial GitHub depository.
 
 Required software was installed form the following locations:
 
@@ -35,7 +67,8 @@ Git: https://git-scm.com/downloads
 
 GitHub account was created at: https://github.com/
 
-			3.2 Week 2 - bmi.py
+
+								3.2 Week 2 - bmi.py
 A program that calculates bmi.
 The second weekly task and the first coding task was to write a program that calculated BMI. BMI (Body Mass Index), is a formula developed in 1972 in the Journal of Chronic Diseases as an indicator of obesity. The formula
 is BMI = weight(kg) / (height (m))^2. This formula was obtained from https://www.calculatorsoup.com/calculators/health/bmi-calculator.php. 
@@ -45,7 +78,9 @@ program could involve the option to use imperial measurements (There is a differ
 
 BMI Origin: Keys A, Fidanza F, Karvonen MJ, Kimura N, Taylor HL (July 1972). "Indices of relative weight and obesity". Journal of Chronic Diseases. 25 (6): 329–343.
 
-			3.3 Week 3 - secondstring.py
+
+								3.3 Week 3 - secondstring.py
+
 A program that takes asks a user to input a string and outputs every second letter in reverse order. 
 Initially, my code for this was quite long and involved a for loop that would create move elements in the string from the 
 beginning to the end. I also experimented with using a reverse function. Upon further reading into NumPy array slicing, this seemed much cleaner and I ended up going with this.
@@ -54,29 +89,39 @@ Array slicing: https://www.w3schools.com/python/numpy/numpy_array_slicing.asp#:~
 For loops: https://www.w3schools.com/python/python_for_loops.asp
 Reverse function: https://www.w3schools.com/python/ref_func_reversed.asp
 
-			3.4 Week 4 - collatz.py
+
+								3.4 Week 4 - collatz.py
+
 Program that asks the user to input any positive integer and outputs the successive values of the following calculation. At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one
 Have the program end if the current value is one.
-This program introduce while loops and if / else functions. These were researched at https://www.w3schools.com/python/python_while_loops.asp.
+This program introduces while loops and if / else functions. These were researched at https://www.w3schools.com/python/python_while_loops.asp.
 
-			3.5 Week 5 - weekday.py
+
+								3.5 Week 5 - weekday.py
+
 Program that outputs whether or not today is a weekday. This program involved arrays and extra research into specific functions was needed. The strftime and datetime functions were researched at https://www.programiz.com/python-programming/datetime/strftime.
-The datetime.today funtions gets the current date. This is then converted to a specific format by the strftime function. In this case, adding the directive of %A converts the date to the full name of the day of the week. Other directive for different formats
+The datetime.today functions gets the current date. This is then converted to a specific format by the strftime function. In this case, adding the directive of %A converts the date to the full name of the day of the week. Other directive for different formats
 can be found in the link above.
 	
-			3.6 Week 6 - squareroot.py
-Program that takes a positive floating-point number as input and outputs an approximation of its square root. This could not be done with the built in Python funtion and therefore required some research into the algorithm required to get the square root of
+
+								3.6 Week 6 - squareroot.py
+
+Program that takes a positive floating-point number as input and outputs an approximation of its square root. This could not be done with the built in Python function and therefore required some research into the algorithm required to get the square root of
 a number. The equation to do so was acquired from https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/#:~:text=Let%20N%20be%20any%20number,correct%20square%20root%20of%20N. The equation is applied to the original number as a first guess.
 The answer to this equation is then used as the next guess, which is inputted into the equation again to get the next guess and so on. Originally, I used a for loop with an arbitrary number of iterations that was large enough to work and any non-massive number.
-After some advice, I changes the program to iterate through the equation using a while loop until a certain precision criteria was met. The precision chosen was within 0.01 as the answer was being rounded down to .1.
+After some advice, I changed the program to iterate through the equation using a while loop until a certain precision criteria was met. The precision chosen was within 0.01 as the answer was being rounded down to .1.
 
-			3.7 Week 7 - es.py
+
+
+								3.7 Week 7 - es.py
+
 Program that reads in a text file and outputs the number of e's it contains. This program required some research into the sys function, specifically the sys.argv function. This was researched at https://www.knowledgehut.com/blog/programming/sys-argv-python-examples.
 Also new in this program was the introduction of the with statement in python, using with open to read the file and assign it to a variable. This was researched at https://www.geeksforgeeks.org/with-statement-in-python/
 
-			3.8 Week 8 - plottask.py
 
-A program that that displays a plot of the functions f(x)=x, g(x)=x2 and h(x)=x3 in the range [0, 4] on the one set of axes. I had experimented with some Seaborn functions, but preffered the simplicity of the matplotlib code
+								3.8 Week 8 - plottask.py
+
+A program that that displays a plot of the functions f(x)=x, g(x)=x2 and h(x)=x3 in the range [0, 4] on the one set of axes. I had experimented with some Seaborn functions, but preferred the simplicity of the matplotlib code
 
 Information on the different plot elements were obtained primarily from matplotlib.org:
 
@@ -85,7 +130,7 @@ Legend - 			https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.legen
 Grid - 				https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.grid.html
 Points, styles and colours - 	https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html
 
-Seaborn fuctions were researced at https://seaborn.pydata.org/generated/seaborn.lineplot.html
+Seaborn functions were researched at https://seaborn.pydata.org/generated/seaborn.lineplot.html
 
 
 
@@ -104,7 +149,6 @@ Seaborn fuctions were researced at https://seaborn.pydata.org/generated/seaborn.
 22/03/21 - Messed around with Seaborn graphs in plottask.py. Commented out as may add to later on.
 11/04/21 - Included more comments and references in bmi.py and secondstring.py
 14/04/21 - Included more comments and references in collatz.py and weekday.py
-15/04/21 - Included more comments and referneces in squareroot.py, es.py
+15/04/21 - Included more comments and references in squareroot.py, es.py, plottask.py
 	 - Changed code in squareroot.py to iterate until precision was met
-
-
+	 - Pushed plottask.py image to repository
