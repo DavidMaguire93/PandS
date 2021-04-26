@@ -1,11 +1,12 @@
 21.03.21 	- Downloaded Iris CSV from http://archive.ics.uci.edu/ml/machine-learning-databases/iris/
            	- Wrote code for simple row / column viewing for preliminary study, code researched from https://www.geeksforgeeks.org/python-basics-of-pandas-using-iris-dataset/
 26.03.21	- Used pandas to convert to dataframe. Wrote code to get mean, median, min and max of all quantitative variables
-03.04.21	- Wrote code tot get first and third quartile of wuantitative variable. Code researched at https://pandas.pydata.org/docs/index.html
+03.04.21	- Wrote code to get first and third quartile of quantitative variables. Code researched at https://pandas.pydata.org/docs/index.html
 		- Made printing of these simple analyses more readable by adding description and line break in printout
 		- Assigned variable to filter by species and wrote code for mean of each species
-
-
+17/04/21	- Added code for individual scatter plots and Pearson's correlations. These were commented out
+		- Added code for a Seaborn pairplot containing scatter plots for all varibale relationships
+		- Added code for numpy corr function, getting correlations of all variables accross whole dataset and by class
 Notes / Plans
 
 I am just leaving this here is a 'project plan' and outline my thoughts and goals that I can come back to. I may leave this section or delete it before the final submission.
