@@ -100,15 +100,33 @@ print("versicolor mean\n", versicolormean)
 print("virginica mean\n", virginicamean)
 """
 
+# Individual Pearsons correlations, commented out as numpy corr function shows correlation for multiple variables
+#pearsons = np.corrcoef(petalwidth,petallength)
+#print(pearsons)
+
+
+# Assigning functions for correlation of full dataset as well as by class
+iriscorr = iris.corr()
+setosacorr = setosa.corr()
+versicorr = versicolor.corr()
+virginicacorr = virginica.corr()
+
+# Printout of correlations with some titles
+print("Iris Correlation\n", iriscorr, "\n")
+print("Setosa Correlation\n", setosacorr, "\n")
+print("Versicolor Correlation\n", versicorr, "\n")
+print("Virginica Correlation\n", virginicacorr, "\n")
+
 # Simple histograph of all quantitative variables
 iris.hist(bins = 30)
+plt.savefig("Variable Histogram")
 plt.show()
 
 
 # Scatter plots using pyplot, can uncomment if individual scatter plots are needed but seaborn pairplot has all relationships
 # In order to have legend that labels species by color, 3 separate scatter plots must be used in one graph, which can be labelled separately
-# classcols (above) can be used in a single scatter plot to label species by color but a legend is more difficult to implement
-# To do this, simply use c = classcols
+# classcols (below) can be used in a single scatter plot to label species by color but a legend is more difficult to implement
+# Save plots to PNG using plt.savefig (PNG is the default format)
 # Naming sequence of splpw : (s)etosa (p)etal (l)ength (p)etal (w)idth
 
 splpw = plt.scatter(setosapetallength, setosapetalwidth, c = "green")
@@ -118,6 +136,7 @@ plt.title("Petal Length vs Petal Width")
 plt.xlabel("Petal Length")
 plt.ylabel("Petal Width")
 plt.legend([splpw, vsplpw, vgplpw],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Petal Length vs Petal Width")
 plt.show()
 
 splsl = plt.scatter(setosapetallength, setosasepallength, c = "green")
@@ -127,6 +146,7 @@ plt.title("Petal Length vs Sepal Length")
 plt.xlabel("Petal Length")
 plt.ylabel("Sepal Length")
 plt.legend([splsl, vsplsl, vgplsl],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Petal Length vs Sepal Length")
 plt.show()
 
 splsw = plt.scatter(setosapetallength, setosasepalwidth, c = "green")
@@ -136,6 +156,7 @@ plt.title("Petal Length vs Sepal Width")
 plt.xlabel("Petal Length")
 plt.ylabel("Sepal Width")
 plt.legend([splsw, vsplsw, vgplsw],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Petal Length vs Sepal Width")
 plt.show()
 
 sslpl = plt.scatter(setosasepallength, setosapetallength, c = "green")
@@ -145,6 +166,7 @@ plt.title("Sepal Length vs Petal Length")
 plt.xlabel("Sepal Length")
 plt.ylabel("Petal Length")
 plt.legend([sslpl, vsslpl, vgslpl],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Sepal Length vs Petal Length")
 plt.show()
 
 sslpw = plt.scatter(setosasepallength, setosapetalwidth, c = "green")
@@ -154,6 +176,7 @@ plt.title("Sepal Length vs Petal Width")
 plt.xlabel("Sepal Length")
 plt.ylabel("Petal Width")
 plt.legend([sslpw, vsslpw, vgslpw],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Sepal Length vs Petal Width")
 plt.show()
 
 sslsw = plt.scatter(setosasepallength, setosasepalwidth, c = "green")
@@ -163,6 +186,7 @@ plt.title("Sepal Length vs Sepal Width")
 plt.xlabel("Sepal Length")
 plt.ylabel("Sepal Width")
 plt.legend([sslsw, vsslsw, vgslsw],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Sepal Length vs Sepal Width")
 plt.show()
 
 spwpl = plt.scatter(setosapetalwidth, setosapetallength, c = "green")
@@ -172,6 +196,7 @@ plt.title("Petal Width vs Petal Length")
 plt.xlabel("Petal Width")
 plt.ylabel("Petal Length")
 plt.legend([spwpl, vspwpl, vgpwpl],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Petal Width vs Petal Length")
 plt.show()
 
 spwsl = plt.scatter(setosapetalwidth, setosasepallength, c = "green")
@@ -181,6 +206,7 @@ plt.title("Petal Width vs Sepal Length")
 plt.xlabel("Petal Width")
 plt.ylabel("Sepal Length")
 plt.legend([spwsl, vspwsl, vgpwsl],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Petal Width vs Sepal Length")
 plt.show()
 
 spwsw = plt.scatter(setosapetalwidth, setosasepalwidth, c = "green")
@@ -190,6 +216,7 @@ plt.title("Petal Width vs Sepal Width")
 plt.xlabel("Petal Width")
 plt.ylabel("Sepal Width")
 plt.legend([spwsw, vspwsw, vgpwsw],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Petal Width vs Sepal Width")
 plt.show()
 
 sswpl = plt.scatter(setosasepalwidth, setosapetallength, c = "green")
@@ -199,6 +226,7 @@ plt.title("Sepal Width vs Petal Length")
 plt.xlabel("Sepal Width")
 plt.ylabel("Petal Length")
 plt.legend([sswpl, vsswpl, vgswpl],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Sepal Width vs Petal Length")
 plt.show()
 
 sswpw = plt.scatter(setosasepalwidth, setosapetalwidth, c = "green")
@@ -208,6 +236,7 @@ plt.title("Sepal Width vs Petal Width")
 plt.xlabel("Sepal Width")
 plt.ylabel("Petal Width")
 plt.legend([sswpw, vsswpw, vgswpw],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Sepal Width vs Petal Width")
 plt.show()
 
 sswsl = plt.scatter(setosasepalwidth, setosasepallength, c = "green")
@@ -217,12 +246,13 @@ plt.title("Sepal Width vs Sepal Length")
 plt.xlabel("Sepal Width")
 plt.ylabel("Sepal Length")
 plt.legend([sswsl, vsswsl, vgswsl],["Iris Setosa", "Iris Versicolor", "Iris Virginica"])
+plt.savefig("Scatter Sepal Width vs Sepal Length")
 plt.show()
 
 
 """
 # Assigning a variable to represent colours for each class to use in plots if needed
-# This is needed in pyplot scatter graphs but is not for Seaborne scatter plots
+# This is needed in single pyplot scatter graphs (below) but is not for Seaborne scatter plots
 classcols = []
 for element in irisclass:
     if element == "Iris-setosa":
@@ -246,22 +276,10 @@ plt.show()
 
 # Seaborn pairplot, containing scatter plots of all variable relationships as well as class distribution of individual variables
 # I find this far more simple and effective that the individual scatter pyplots above and this is what I would use if only one method was allowed
+# suptitle is used to give a title to the whole plot. y is y coordinates, with 1 being the top of the plot. In some cases, y can be more than 1
+# but I found the title would go beyond the scope fo the image
 sns.pairplot(iris, hue = "class")
+plt.suptitle("Iris Pairplot - Scatter and Distribution", y = 1)
+plt.savefig("Pairplot - Scatter Plots and Distribution Plots")
 plt.show()
 
-# Individual Pearsons correlations, commented out as numpy corr function shows correlation for multiple variables
-#pearsons = np.corrcoef(petalwidth,petallength)
-#print(pearsons)
-
-
-# Assigning functions for correlation of full dataset as well as by class
-iriscorr = iris.corr()
-setosacorr = setosa.corr()
-versicorr = versicolor.corr()
-virginicacorr = virginica.corr()
-
-# Printout of correlations with some titles
-print("Iris Correlation\n", iriscorr, "\n")
-print("Setosa Correlation\n", setosacorr, "\n")
-print("Versicolor Correlation\n", versicorr, "\n")
-print("Virginica Correlation\n", virginicacorr, "\n")
