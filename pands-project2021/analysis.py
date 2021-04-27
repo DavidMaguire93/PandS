@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import os
 
 # Load csv
 iris = pd.read_csv("iris.csv") 
@@ -53,16 +54,103 @@ virginicapetalwidth = virginica["petalwidth"]
 # Full print of dataframe. Comment out when not needed
 #print(iris)
 
+# Creating of text file to append
+# Open in write mode to overwrite anything that was there before
+# Opening a temporary file which will be cleaned for a new file and then later deleted
+f = open("iristemp.txt", "w")
+f.write("Iris Dataset Variable Analysis\n\n*******************************")
+f.close()
 
 # Mean, median, min, max, first and third quartile of all quantitative variables
-irismean = iris.mean()
+# Mean and stdev are rounded to be more in line with the other results
+irismean = iris.mean().round(2)
 irismedian = iris.median()
 irismin = iris.min()
 irismax = iris.max()
 iris25 = iris.quantile(q = 0.25)
 iris75 = iris.quantile(q = 0.75)
-irisstdev = iris.std()
+irisstdev = iris.std().round(2)
 
+setosamean = setosa.mean().round(2)
+setosamedian = setosa.median()
+setosamin = setosa.min()
+setosamax = setosa.max()
+setosa25 = setosa.quantile(q = 0.25)
+setosa75 = setosa.quantile(q = 0.75)
+setosastdev = setosa.std().round(2)
+
+versicolormean = versicolor.mean().round(2)
+versicolormedian = versicolor.median()
+versicolormin = versicolor.min()
+versicolormax = versicolor.max()
+versicolor25 = versicolor.quantile(q = 0.25)
+versicolor75 = versicolor.quantile(q = 0.75)
+versicolorstdev = versicolor.std().round(2)
+
+virginicamean = virginica.mean().round(2)
+virginicamedian = virginica.median()
+virginicamin = virginica.min()
+virginicamax = virginica.max()
+virginica25 = virginica.quantile(q = 0.25)
+virginica75 = virginica.quantile(q = 0.75)
+virginicastdev = virginica.std().round(2)
+
+
+# Using with open and opening the file in append mode so as not to overwrite what is was already written
+with open("iristemp.txt", "a") as f:
+
+# Printout out of analysis of full dataset with titles and line spaces
+# Removing separators with sep = '' to remove space at start of printout
+    print("\nFull Iris Dataset", file = f)
+    print("\nVariable Means\n", irismean, sep = '',file = f)
+    print("\nVariable Medians\n", irismedian, sep = '', file = f)
+    print("\nVariable Min\n", irismin, sep = '', file = f)
+    print("\nVariable Max\n", irismax, sep = '', file = f)
+    print("\nVariable First Quartiles\n", iris25, sep = '', file = f)
+    print("\nVariable Third Quartiles\n", iris75, sep = '', file = f)
+    print("\nVariable Standard Deviation\n", irisstdev, sep = '', file = f)
+
+# Printout of same analysis but just on Setosa Species
+
+    print("\n\n*******************************\nSetosa Dataset", file = f)
+    print("\nVariable Means\n", setosamean, sep = '',file = f)
+    print("\nVariable Medians\n", setosamedian, sep = '', file = f)
+    print("\nVariable Min\n", setosamin, sep = '', file = f)
+    print("\nVariable Max\n", setosamax, sep = '', file = f)
+    print("\nVariable First Quartiles\n", setosa25, sep = '', file = f)
+    print("\nVariable Third Quartiles\n", setosa75, sep = '', file = f)
+    print("\nVariable Standard Deviation\n", setosastdev, sep = '', file = f)
+    
+# Printout of same analysis but just on Versicolor Species
+
+    print("\n\n*******************************\nVersicolor Dataset", file = f)
+    print("\nVariable Means\n", versicolormean, sep = '',file = f)
+    print("\nVariable Medians\n", versicolormedian, sep = '', file = f)
+    print("\nVariable Min\n", versicolormin, sep = '', file = f)
+    print("\nVariable Max\n", versicolormax, sep = '', file = f)
+    print("\nVariable First Quartiles\n", versicolor25, sep = '', file = f)
+    print("\nVariable Third Quartiles\n", versicolor75, sep = '', file = f)
+    print("\nVariable Standard Deviation\n", versicolorstdev, sep = '', file = f)
+
+# Printout of same analysis but just on Virginica Species
+
+    print("\n\n*******************************\nVirginica Dataset", file = f)
+    print("\nVariable Means\n", virginicamean, sep = '',file = f)
+    print("\nVariable Medians\n", virginicamedian, sep = '', file = f)
+    print("\nVariable Min\n", virginicamin, sep = '', file = f)
+    print("\nVariable Max\n", virginicamax, sep = '', file = f)
+    print("\nVariable First Quartiles\n", virginica25, sep = '', file = f)
+    print("\nVariable Third Quartiles\n", virginica75, sep = '', file = f)
+    print("\nVariable Standard Deviation\n", virginicastdev, sep = '', file = f)
+
+with open("iristemp.txt", "r") as f:
+    lines = f.readlines()
+
+with open("iris.txt", "w") as f:
+    for line in lines:
+        if "dtype" not in line:
+            f.write(line)
+os.remove("iristemp.txt")
 
 # Printout analysis with descriptions for readability
 print("mean\n", irismean)
@@ -103,7 +191,7 @@ print("virginica mean\n", virginicamean)
 # Individual Pearsons correlations, commented out as numpy corr function shows correlation for multiple variables
 #pearsons = np.corrcoef(petalwidth,petallength)
 #print(pearsons)
-
+"""
 
 # Assigning functions for correlation of full dataset as well as by class
 iriscorr = iris.corr()
@@ -118,7 +206,9 @@ print("Versicolor Correlation\n", versicorr, "\n")
 print("Virginica Correlation\n", virginicacorr, "\n")
 
 # Simple histograph of all quantitative variables
-iris.hist(bins = 30)
+# Using bins = 30 to give a more detailed view (default is 10)
+# Colored to be similar to color of iris, colors can be found at https://matplotlib.org/2.0.2/examples/color/named_colors.html
+iris.hist(bins = 30, color = 'darkorchid')
 plt.savefig("Variable Histogram")
 plt.show()
 
@@ -249,7 +339,7 @@ plt.legend([sswsl, vsswsl, vgswsl],["Iris Setosa", "Iris Versicolor", "Iris Virg
 plt.savefig("Scatter Sepal Width vs Sepal Length")
 plt.show()
 
-
+"""
 """
 # Assigning a variable to represent colours for each class to use in plots if needed
 # This is needed in single pyplot scatter graphs (below) but is not for Seaborne scatter plots
@@ -271,7 +361,7 @@ plt.title("Petal Length vs Petal Width")
 plt.xlabel("Petal Length")
 plt.ylabel("Petal Width")
 plt.show()
-"""
+
 
 
 # Seaborn pairplot, containing scatter plots of all variable relationships as well as class distribution of individual variables
@@ -283,3 +373,4 @@ plt.suptitle("Iris Pairplot - Scatter and Distribution", y = 1)
 plt.savefig("Pairplot - Scatter Plots and Distribution Plots")
 plt.show()
 
+"""

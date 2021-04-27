@@ -1,0 +1,192 @@
+Iris Dataset Variable Analysis
+
+*******************************
+Full Iris Dataset
+
+Variable Means
+sepallength    5.85
+sepalwidth     3.05
+petallength    3.77
+petalwidth     1.21
+
+Variable Medians
+sepallength    5.8
+sepalwidth     3.0
+petallength    4.4
+petalwidth     1.3
+
+Variable Min
+sepallength            4.3
+sepalwidth               2
+petallength              1
+petalwidth             0.1
+class          Iris-setosa
+
+Variable Max
+sepallength               7.9
+sepalwidth                4.4
+petallength               6.9
+petalwidth                2.5
+class          Iris-virginica
+
+Variable First Quartiles
+sepallength    5.1
+sepalwidth     2.8
+petallength    1.6
+petalwidth     0.3
+
+Variable Third Quartiles
+sepallength    6.4
+sepalwidth     3.3
+petallength    5.1
+petalwidth     1.8
+
+Variable Standard Deviation
+sepallength    0.83
+sepalwidth     0.43
+petallength    1.76
+petalwidth     0.76
+
+
+*******************************
+Setosa Dataset
+
+Variable Means
+sepallength    5.00
+sepalwidth     3.42
+petallength    1.47
+petalwidth     0.24
+
+Variable Medians
+sepallength    5.0
+sepalwidth     3.4
+petallength    1.5
+petalwidth     0.2
+
+Variable Min
+sepallength            4.3
+sepalwidth             2.3
+petallength              1
+petalwidth             0.1
+class          Iris-setosa
+
+Variable Max
+sepallength            5.8
+sepalwidth             4.4
+petallength            1.9
+petalwidth             0.6
+class          Iris-setosa
+
+Variable First Quartiles
+sepallength    4.8
+sepalwidth     3.1
+petallength    1.4
+petalwidth     0.2
+
+Variable Third Quartiles
+sepallength    5.2
+sepalwidth     3.7
+petallength    1.6
+petalwidth     0.3
+
+Variable Standard Deviation
+sepallength    0.36
+sepalwidth     0.38
+petallength    0.18
+petalwidth     0.11
+
+
+*******************************
+Versicolor Dataset
+
+Variable Means
+sepallength    5.94
+sepalwidth     2.77
+petallength    4.26
+petalwidth     1.33
+
+Variable Medians
+sepallength    5.90
+sepalwidth     2.80
+petallength    4.35
+petalwidth     1.30
+
+Variable Min
+sepallength                4.9
+sepalwidth                   2
+petallength                  3
+petalwidth                   1
+class          Iris-versicolor
+
+Variable Max
+sepallength                  7
+sepalwidth                 3.4
+petallength                5.1
+petalwidth                 1.8
+class          Iris-versicolor
+
+Variable First Quartiles
+sepallength    5.600
+sepalwidth     2.525
+petallength    4.000
+petalwidth     1.200
+
+Variable Third Quartiles
+sepallength    6.3
+sepalwidth     3.0
+petallength    4.6
+petalwidth     1.5
+
+Variable Standard Deviation
+sepallength    0.52
+sepalwidth     0.31
+petallength    0.47
+petalwidth     0.20
+
+
+*******************************
+Virginica Dataset
+
+Variable Means
+sepallength    6.59
+sepalwidth     2.97
+petallength    5.55
+petalwidth     2.03
+
+Variable Medians
+sepallength    6.50
+sepalwidth     3.00
+petallength    5.55
+petalwidth     2.00
+
+Variable Min
+sepallength               4.9
+sepalwidth                2.2
+petallength               4.5
+petalwidth                1.4
+class          Iris-virginica
+
+Variable Max
+sepallength               7.9
+sepalwidth                3.8
+petallength               6.9
+petalwidth                2.5
+class          Iris-virginica
+
+Variable First Quartiles
+sepallength    6.225
+sepalwidth     2.800
+petallength    5.100
+petalwidth     1.800
+
+Variable Third Quartiles
+sepallength    6.900
+sepalwidth     3.175
+petallength    5.875
+petalwidth     2.300
+
+Variable Standard Deviation
+sepallength    0.64
+sepalwidth     0.32
+petallength    0.55
+petalwidth     0.27
