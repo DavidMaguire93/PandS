@@ -190,3 +190,32 @@ sepallength    0.64
 sepalwidth     0.32
 petallength    0.55
 petalwidth     0.27
+*******************************
+Iris Correlation
+             sepallength  sepalwidth  petallength  petalwidth
+sepallength     1.000000   -0.103784     0.871283    0.816971
+sepalwidth     -0.103784    1.000000    -0.415218   -0.350733
+petallength     0.871283   -0.415218     1.000000    0.962314
+petalwidth      0.816971   -0.350733     0.962314    1.000000
+
+Setosa Correlation
+             sepallength  sepalwidth  petallength  petalwidth
+sepallength     1.000000    0.746498     0.266497    0.282074
+sepalwidth      0.746498    1.000000     0.178687    0.282444
+petallength     0.266497    0.178687     1.000000    0.304120
+petalwidth      0.282074    0.282444     0.304120    1.000000
+
+Versicolor Correlation
+             sepallength  sepalwidth  petallength  petalwidth
+sepallength     1.000000    0.525911     0.754049    0.546461
+sepalwidth      0.525911    1.000000     0.560522    0.663999
+petallength     0.754049    0.560522     1.000000    0.786668
+petalwidth      0.546461    0.663999     0.786668    1.000000
+
+Virginica Correlation
+             sepallength  sepalwidth  petallength  petalwidth
+sepallength     1.000000    0.457228     0.864225    0.281108
+sepalwidth      0.457228    1.000000     0.401045    0.537728
+petallength     0.864225    0.401045     1.000000    0.322108
+petalwidth      0.281108    0.537728     0.322108    1.000000
+

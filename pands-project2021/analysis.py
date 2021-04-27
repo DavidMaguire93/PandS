@@ -95,11 +95,17 @@ virginica25 = virginica.quantile(q = 0.25)
 virginica75 = virginica.quantile(q = 0.75)
 virginicastdev = virginica.std().round(2)
 
+# Assigning functions for correlation of full dataset as well as by class
+iriscorr = iris.corr()
+setosacorr = setosa.corr()
+versicorr = versicolor.corr()
+virginicacorr = virginica.corr()
+
 
 # Using with open and opening the file in append mode so as not to overwrite what is was already written
 with open("iristemp.txt", "a") as f:
 
-# Printout out of analysis of full dataset with titles and line spaces
+# Printout to file out of analysis of full dataset with titles and line spaces
 # Removing separators with sep = '' to remove space at start of printout
     print("\nFull Iris Dataset", file = f)
     print("\nVariable Means\n", irismean, sep = '',file = f)
@@ -110,7 +116,7 @@ with open("iristemp.txt", "a") as f:
     print("\nVariable Third Quartiles\n", iris75, sep = '', file = f)
     print("\nVariable Standard Deviation\n", irisstdev, sep = '', file = f)
 
-# Printout of same analysis but just on Setosa Species
+# Printout to file of same analysis but just on Setosa Species
 
     print("\n\n*******************************\nSetosa Dataset", file = f)
     print("\nVariable Means\n", setosamean, sep = '',file = f)
@@ -121,7 +127,7 @@ with open("iristemp.txt", "a") as f:
     print("\nVariable Third Quartiles\n", setosa75, sep = '', file = f)
     print("\nVariable Standard Deviation\n", setosastdev, sep = '', file = f)
     
-# Printout of same analysis but just on Versicolor Species
+# Printout to file of same analysis but just on Versicolor Species
 
     print("\n\n*******************************\nVersicolor Dataset", file = f)
     print("\nVariable Means\n", versicolormean, sep = '',file = f)
@@ -132,7 +138,7 @@ with open("iristemp.txt", "a") as f:
     print("\nVariable Third Quartiles\n", versicolor75, sep = '', file = f)
     print("\nVariable Standard Deviation\n", versicolorstdev, sep = '', file = f)
 
-# Printout of same analysis but just on Virginica Species
+# Printout to file of same analysis but just on Virginica Species
 
     print("\n\n*******************************\nVirginica Dataset", file = f)
     print("\nVariable Means\n", virginicamean, sep = '',file = f)
@@ -142,6 +148,12 @@ with open("iristemp.txt", "a") as f:
     print("\nVariable First Quartiles\n", virginica25, sep = '', file = f)
     print("\nVariable Third Quartiles\n", virginica75, sep = '', file = f)
     print("\nVariable Standard Deviation\n", virginicastdev, sep = '', file = f)
+
+# Printout to file of correlations with some titles
+    print("*******************************\nIris Correlation\n", iriscorr, "\n", sep = '',file = f)
+    print("Setosa Correlation\n", setosacorr, "\n", sep = '',file = f)
+    print("Versicolor Correlation\n", versicorr, "\n", sep = '',file = f)
+    print("Virginica Correlation\n", virginicacorr, "\n", sep = '',file = f)
 
 with open("iristemp.txt", "r") as f:
     lines = f.readlines()
@@ -176,11 +188,6 @@ Petal Width
 Class
 """
 
-# Mean of each species
-setosamean = setosa.mean()
-versicolormean = versicolor.mean()
-virginicamean = virginica.mean()
-
 """
 # Printouts of mean
 print("setosa mean\n", setosamean)
@@ -193,17 +200,7 @@ print("virginica mean\n", virginicamean)
 #print(pearsons)
 """
 
-# Assigning functions for correlation of full dataset as well as by class
-iriscorr = iris.corr()
-setosacorr = setosa.corr()
-versicorr = versicolor.corr()
-virginicacorr = virginica.corr()
 
-# Printout of correlations with some titles
-print("Iris Correlation\n", iriscorr, "\n")
-print("Setosa Correlation\n", setosacorr, "\n")
-print("Versicolor Correlation\n", versicorr, "\n")
-print("Virginica Correlation\n", virginicacorr, "\n")
 
 # Simple histograph of all quantitative variables
 # Using bins = 30 to give a more detailed view (default is 10)
