@@ -8,7 +8,6 @@
 # Import packages
 
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import seaborn as sns
 import os
@@ -188,17 +187,13 @@ Petal Width
 Class
 """
 
-"""
-# Printouts of mean
-print("setosa mean\n", setosamean)
-print("versicolor mean\n", versicolormean)
-print("virginica mean\n", virginicamean)
-"""
+
+
 
 # Individual Pearsons correlations, commented out as numpy corr function shows correlation for multiple variables
 #pearsons = np.corrcoef(petalwidth,petallength)
 #print(pearsons)
-"""
+
 
 
 
@@ -336,7 +331,7 @@ plt.legend([sswsl, vsswsl, vgswsl],["Iris Setosa", "Iris Versicolor", "Iris Virg
 plt.savefig("Scatter Sepal Width vs Sepal Length")
 plt.show()
 
-"""
+
 """
 # Assigning a variable to represent colours for each class to use in plots if needed
 # This is needed in single pyplot scatter graphs (below) but is not for Seaborne scatter plots
@@ -359,7 +354,7 @@ plt.xlabel("Petal Length")
 plt.ylabel("Petal Width")
 plt.show()
 
-
+"""
 
 # Seaborn pairplot, containing scatter plots of all variable relationships as well as class distribution of individual variables
 # I find this far more simple and effective that the individual scatter pyplots above and this is what I would use if only one method was allowed
@@ -369,5 +364,3 @@ sns.pairplot(iris, hue = "class")
 plt.suptitle("Iris Pairplot - Scatter and Distribution", y = 1)
 plt.savefig("Pairplot - Scatter Plots and Distribution Plots")
 plt.show()
-
-"""
