@@ -216,9 +216,31 @@ Class
 # Simple histograph of all quantitative variables
 # Using bins = 30 to give a more detailed view (default is 10)
 # Colored to be similar to color of iris, colors can be found at https://matplotlib.org/2.0.2/examples/color/named_colors.html
+# Using suptitle to give a title to the whole image. using .title only gives a title to the 4th plot only
 iris.hist(bins = 30, color = 'darkorchid')
-plt.savefig("Variable Histogram")
+plt.suptitle("Iris Histograms")
+plt.savefig("Iris Histogram")
 plt.show()
+
+# Histogram of Setosa variables
+# Taking out bins = 30 as the default is 10 and this keeps the number to 5 data points per bin on average
+setosa.hist(color = 'darkorchid')
+plt.suptitle("Setosa Histograms")
+plt.savefig("Setosa Histogram")
+plt.show()
+
+# Histogram of Versicolor Variables
+versicolor.hist(color = 'darkorchid')
+plt.suptitle("Versicolor Histograms")
+plt.savefig("Versicolor Histogram")
+plt.show()
+
+# Histogram of Virginica Variables
+virginica.hist(color = 'darkorchid')
+plt.suptitle("Virginica Histograms")
+plt.savefig("Virginica Histogram")
+plt.show()
+
 
 
 # Scatter plots using pyplot, can uncomment if individual scatter plots are needed but seaborn pairplot has all relationships
