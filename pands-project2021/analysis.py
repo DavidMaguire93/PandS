@@ -1,19 +1,49 @@
-# Exploring Iris
+# Analysing the Iris dataset
 # Author: David Maguire
-# Data obtained from https://datahub.io/machine-learning/iris#data
-# Code taken from https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html
-# Also taken from https://datahub.io/machine-learning/iris#data
+# Below are some invaluable references for me in the making of this project:
+
+#Iris Dataset Origin: 							Anderson, E., 1935. The irises of the Gaspe Peninsula. Bull. Am. Iris Soc., 59, pp.2-5.
+#Iris Dataset Origin in data analysis: 					Fisher, R.A., 1936. The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), pp.179-188.
+#Python variables:							                        https://www.w3schools.com/python/python_variables.asp
+#Python for loop:							                        https://www.w3schools.com/python/python_for_loops.asp
+#pandas.DataFrame and associated analysis (mean, median etc.): 		https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
+#pandas.DataFram.round:						                    	https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.round.html
+#Files handing in Python: 					                    	https://www.w3schools.com/python/python_file_handling.asp
+#									                                https://www.w3schools.com/python/python_file_open.asp
+#Test for null values:						                    	https://datatofish.com/check-nan-pandas-dataframe/
+#os.remove:								                            https://www.w3schools.com/python/python_file_remove.asp
+#print to file:							                           	https://stackoverflow.com/questions/7152762/how-to-redirect-print-output-to-a-file
+#numpy:									                            https://numpy.org/doc/stable/user/absolute_beginners.html
+#matplotlib.pyplot:			                        				https://matplotlib.org/stable/tutorials/introductory/pyplot.html#:~:text=pyplot%20is%20a%20collection%20of,the%20plot%20with%20labels%2C%20etc.
+#								                                	https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html
+#pyplot.hist:						                        		https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html
+#pyplot.scatter:					                    			https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html
+#pyplot.legend:							                        	https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html
+#pyplot.savefig:						                    		https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html
+#seaborne:								                            https://seaborn.pydata.org/introduction.html
+#seaborne.pairplot						                           	https://seaborn.pydata.org/generated/seaborn.pairplot.html
+#Working with Iris.csv video (not specific pairplot but gave me the idea):	https://www.youtube.com/watch?v=HXi9cl5Aq5w
+#Forum with info on color array using for loop:				        https://stackoverflow.com/questions/43949395/looping-scatter-plot-colors
+#numpy.corrcoef:								                    https://numpy.org/doc/stable/reference/generated/numpy.corrcoef.html
+#pandas.DataFrame.corr							                    https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html
+#kaggle iris dataset examples:					                	https://www.kaggle.com/arshid/iris-flower-dataset/code
+#Aditya D Bhat iris analysis:					                	https://www.kaggle.com/adityabhat24/iris-data-analysis-and-machine-learning-python
+#RitRa iris analysis:						                    	https://github.com/RitRa/Project2018-iris
+#seaborne iris examples:						                	https://www.kaggle.com/noelano/seaborn-visualization-on-iris-data-set
+#seaborne graph examples:					                    	https://medium.com/@neuralnets/data-visualization-with-python-and-seaborn-part-1-29c9478a8700
+#Working with Iris.csv video:				                		https://www.youtube.com/watch?v=HXi9cl5Aq5w
+
+
 
 
 # Import packages
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import os
 
-# Load csv
+# Load csv using pd.read_csv
 iris = pd.read_csv("iris.csv") 
 
 # Convert to dataframe using pandas and add columns (columns names according to iris.names)
@@ -21,14 +51,14 @@ iris = pd.read_csv("iris.csv")
 iris = pd.DataFrame(iris)
 iris.columns = ["sepallength","sepalwidth","petallength","petalwidth","class"]
 
-# Assigning variables to columns using dataframe and []
+# Assigning variables to columns using dataframe and [] (this is possible because the columns were named)
 sepallength = iris["sepallength"]
 sepalwidth = iris["sepalwidth"]
 petallength = iris["petallength"]
 petalwidth = iris["petalwidth"]
 irisclass = iris["class"]
 
-# Assigning variable to filter of data by species
+# Assigning variables to filter of data by species
 setosa = iris.loc[iris["class"] == "Iris-setosa"]
 versicolor = iris.loc[iris["class"] == "Iris-versicolor"]
 virginica = iris.loc[iris["class"] == "Iris-virginica"]
@@ -61,8 +91,13 @@ f = open("iristemp.txt", "w")
 f.write("Iris Dataset Variable Analysis\n\n*******************************")
 f.close()
 
-# Mean, median, min, max, first and third quartile of all quantitative variables
-# Mean and stdev are rounded to be more in line with the other results
+# Test for null values (may need to remove if null values are present)
+# Print out a message and a true or false describing the presence of null values
+null = iris.isnull().values.any()
+print("Contains NULL values: ", null)
+
+# Mean, median, min, max, first and third quartile, standard deviation, skewness and kurtosis of all quantitative variables
+# Mean, stdev, skewness and kurtosis are rounded to be more in line with the other results
 irismean = iris.mean().round(2)
 irismedian = iris.median()
 irismin = iris.min()
@@ -73,6 +108,7 @@ irisstdev = iris.std().round(2)
 iriskurt = iris.kurt().round(2)
 irisskew = iris.skew().round(2)
 
+# The same is done for the variables grouped by species
 setosamean = setosa.mean().round(2)
 setosamedian = setosa.median()
 setosamin = setosa.min()
@@ -103,7 +139,7 @@ virginicastdev = virginica.std().round(2)
 virginicakurt = virginica.kurt().round(2)
 virginicaskew = virginica.skew().round(2)
 
-# Assigning functions for correlation of full dataset as well as by class
+# Assigning functions for correlation of full dataset as well as by class using pandas function DataFrame.corr
 iriscorr = iris.corr()
 setosacorr = setosa.corr()
 versicorr = versicolor.corr()
@@ -111,10 +147,13 @@ virginicacorr = virginica.corr()
 
 
 # Using with open and opening the file in append mode so as not to overwrite what is was already written
+# Using with open so the file does not need to later be closed
+# All following prints to file will have to be indented
 with open("iristemp.txt", "a") as f:
 
 # Printout to file out of analysis of full dataset with titles and line spaces
 # Removing separators with sep = '' to remove space at start of printout
+# Using 'file =' to specify which file to print to
     print("\nFull Iris Dataset", file = f)
     print("\nVariable Means\n", irismean, sep = '',file = f)
     print("\nVariable Medians\n", irismedian, sep = '', file = f)
@@ -171,6 +210,13 @@ with open("iristemp.txt", "a") as f:
     print("Versicolor Correlation\n", versicorr, "\n", sep = '',file = f)
     print("Virginica Correlation\n", virginicacorr, "\n", sep = '',file = f)
 
+# Individual Pearsons correlations, commented out as numpy corr function shows correlation for multiple variables
+#pearsons = np.corrcoef(petalwidth,petallength)
+#print(pearsons)
+
+# Adding this code to remove the lines containing the data type of the mean, median etc.
+# All of these lines contain the word 'dtype'. The code below reads the temp text file and write any line not containing dtype to a new file
+# This method effectively removes any line with dtype in it
 with open("iristemp.txt", "r") as f:
     lines = f.readlines()
 
@@ -180,6 +226,7 @@ with open("iris.txt", "w") as f:
             f.write(line)
 os.remove("iristemp.txt")
 
+"""
 # Printout analysis with descriptions for readability
 print("mean\n", irismean)
 print("median\n", irismedian)
@@ -188,7 +235,7 @@ print("max\n", irismax)
 print("first quartile\n", iris25)
 print("third quartile\n", iris75)
 print("standard dev\n", irisstdev)
-
+"""
 
 """
 Name of 3 species for reference
@@ -204,20 +251,11 @@ Petal Width
 Class
 """
 
-
-
-
-# Individual Pearsons correlations, commented out as numpy corr function shows correlation for multiple variables
-#pearsons = np.corrcoef(petalwidth,petallength)
-#print(pearsons)
-
-
-
-
-# Simple histograph of all quantitative variables
+# Simple histogram of all quantitative variables
 # Using bins = 30 to give a more detailed view (default is 10)
 # Colored to be similar to color of iris, colors can be found at https://matplotlib.org/2.0.2/examples/color/named_colors.html
 # Using suptitle to give a title to the whole image. using .title only gives a title to the 4th plot only
+# Save plots to PNG using plt.savefig (PNG is the default format)
 iris.hist(bins = 30, color = 'darkorchid')
 plt.suptitle("Iris Histograms")
 plt.savefig("Iris Histogram")
@@ -249,6 +287,8 @@ plt.show()
 # classcols (below) can be used in a single scatter plot to label species by color but a legend is more difficult to implement
 # Save plots to PNG using plt.savefig (PNG is the default format)
 # Naming sequence of splpw : (s)etosa (p)etal (l)ength (p)etal (w)idth
+# Label axes, specifying that cm is the measurement
+# Use pyplot.legend with the ids made and the appropriate species labels
 
 splpw = plt.scatter(setosapetallength, setosapetalwidth, c = "green")
 vsplpw = plt.scatter(versicolorpetallength, versicolorpetalwidth, c = "red")
@@ -398,7 +438,7 @@ plt.show()
 # Seaborn pairplot, containing scatter plots of all variable relationships as well as class distribution of individual variables
 # I find this far more simple and effective that the individual scatter pyplots above and this is what I would use if only one method was allowed
 # suptitle is used to give a title to the whole plot. y is y coordinates, with 1 being the top of the plot. In some cases, y can be more than 1
-# but I found the title would go beyond the scope fo the image
+# but I found the title would go beyond the scope of the image
 sns.pairplot(iris, hue = "class")
 plt.suptitle("Iris Pairplot - Scatter and Distribution", y = 1)
 plt.savefig("Pairplot - Scatter Plots and Distribution Plots")
