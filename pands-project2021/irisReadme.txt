@@ -15,12 +15,34 @@ as the specific species of Iris. The 3 species were 'Setosa', 'Versicolor' and '
 of the variables. This readme will cover the process and specific codoing techniques involved in the basic analysis of the variables (mean, median etc.),  the plots used as well as any other analyses.
 
 The Iris dataset contians data on 150 iris flowers of 3 different species. the length and width of the petals and sepals of each flower was measured. The Iris data was originally recorded by Edgar Anderson in 1935 and was used in data
-analytics the following year by Ronal Fisher. Since then, it has become a broadly popular sample multivariate dataset in data analysis and data science.
+analytics the following year by Ronal Fisher. Since then, it has become a broadly popular multivariate ample dataset in data analysis and data science.
 
 Iris dataset origin: Anderson, E., 1935. The irises of the Gaspe Peninsula. Bull. Am. Iris Soc., 59, pp.2-5.
 Iris dataset origin in data analytics: Fisher, R.A., 1936. The use of multiple measurements in taxonomic problems. Annals of eugenics, 7(2), pp.179-188.
 
+Before writing any code, I first has to research other examples of analysis of the iris dataset. A lot of research was done on kaggle.com, which had many examples of other people analysing the data. One such example which had a lot of
+useful graphs was by Aditya D Bhat (https://www.kaggle.com/adityabhat24/iris-data-analysis-and-machine-learning-python). Another good example that I found on GitHub was this one by RitRa: https://github.com/RitRa/Project2018-iris.
+Out of all these plots, the one that seemed most clear and effective to me was what I later learned to be a seaborn pairplot. This was also originally seen (although not exactly the same) in this youtube video:
 
+
+kaggle iris dataset examples:						https://www.kaggle.com/arshid/iris-flower-dataset/code
+Aditya D Bhat iris analysis:						https://www.kaggle.com/adityabhat24/iris-data-analysis-and-machine-learning-python
+RitRa iris analysis:							https://github.com/RitRa/Project2018-iris
+seaborne iris examples:							https://www.kaggle.com/noelano/seaborn-visualization-on-iris-data-set
+seaborne graph examples:						https://medium.com/@neuralnets/data-visualization-with-python-and-seaborn-part-1-29c9478a8700
+Working with Iris.csv video:						https://www.youtube.com/watch?v=HXi9cl5Aq5w
+
+This research gave me a basice to work on. To break the project down into smaller parts, I settled on 6 smaller tasks that would make up the project. These were:
+
+Variables: 			Using pandas to make an iris dataframe and assigning variables to anything I would need in the future
+Basic Analysis: 		Getting mean, median etc. of all variables and species specific variables
+Histograms: 			Making the histograms
+Scatter Plots:			Making the scatterplots
+Correlations: 			Getting pearsons correlation of variables
+Save and Write functions: 	Write code for saving plots and writing analyses to text file
+
+With that plan, I set out to start writing my code. At each step, I would review and possibly add to the previous step. At various points, I came up with more ideas to add e.g. kurtosis and skewness in the basic variables section was only
+added at the end. I will discuss each step in the sections below.
 
 
 
@@ -92,7 +114,7 @@ points by species. Originally, I used a for loop to iterate over the class colum
 used in the 'c =' parameter of pyplot.scatter to create different colours for each species in the plot. I found with this, however, that I could not add a legend to the plot to display what colour is what species. In order to add a legend, I had to
 create 3 differents sets of data with each set being each species and assign them a label. I used the naming sequence as follows:splpw : (s)etosa (p)etal (l)ength (p)etal (w)idth. This allowed me to creat a different label for every iteration of variables
 for each species. I used the 'c =' parameter to assign a different colour to each group of datasets. I used the plyplot .xlabel, .ylabel and .title to label both axes and add a title. I used the pyplot.legend with a list of the lables used and the accompanying
-legend label (each species). Finally, I used the pyplot .savefig and .show as above. I did this 12 times for each pair of variables. Upon review, this was a lot of code, and it's possible that a function could be made to cut down on the code length.
+legend label (each species). Finally, I used the pyplot .savefig and .show as above.  Were I clould label the axes, I included a (cm) clarification. I did this 12 times for each pair of variables. Upon review, this was a lot of code, and it's possible that a function could be made to cut down on the code length.
 The function would most likely have a lot of parameters and I'm not sure on how much code this would save.
 
 In researching for this project, I came across a plot in a youtube video that I thought would be quite useful and brings together all the scatter plots made above. This is called a pairplot and is made using seaborn. It creates a 4x4 matrix which contains
@@ -186,6 +208,12 @@ Forum with info on color array using for loop:				https://stackoverflow.com/ques
 
 numpy.corrcoef:								https://numpy.org/doc/stable/reference/generated/numpy.corrcoef.html
 pandas.DataFrame.corr							https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html
+kaggle iris dataset examples:						https://www.kaggle.com/arshid/iris-flower-dataset/code
+Aditya D Bhat iris analysis:						https://www.kaggle.com/adityabhat24/iris-data-analysis-and-machine-learning-python
+RitRa iris analysis:							https://github.com/RitRa/Project2018-iris
+seaborne iris examples:							https://www.kaggle.com/noelano/seaborn-visualization-on-iris-data-set
+seaborne graph examples:						https://medium.com/@neuralnets/data-visualization-with-python-and-seaborn-part-1-29c9478a8700
+Working with Iris.csv video:						https://www.youtube.com/watch?v=HXi9cl5Aq5w
 
 
 
