@@ -69,6 +69,8 @@ irismax = iris.max()
 iris25 = iris.quantile(q = 0.25)
 iris75 = iris.quantile(q = 0.75)
 irisstdev = iris.std().round(2)
+iriskurt = iris.kurt().round(2)
+irisskew = iris.skew().round(2)
 
 setosamean = setosa.mean().round(2)
 setosamedian = setosa.median()
@@ -77,6 +79,8 @@ setosamax = setosa.max()
 setosa25 = setosa.quantile(q = 0.25)
 setosa75 = setosa.quantile(q = 0.75)
 setosastdev = setosa.std().round(2)
+setosakurt = setosa.kurt().round(2)
+setosaskew = setosa.skew().round(2)
 
 versicolormean = versicolor.mean().round(2)
 versicolormedian = versicolor.median()
@@ -85,6 +89,8 @@ versicolormax = versicolor.max()
 versicolor25 = versicolor.quantile(q = 0.25)
 versicolor75 = versicolor.quantile(q = 0.75)
 versicolorstdev = versicolor.std().round(2)
+versicolorkurt = versicolor.kurt().round(2)
+versicolorskew = versicolor.skew().round(2)
 
 virginicamean = virginica.mean().round(2)
 virginicamedian = virginica.median()
@@ -93,6 +99,8 @@ virginicamax = virginica.max()
 virginica25 = virginica.quantile(q = 0.25)
 virginica75 = virginica.quantile(q = 0.75)
 virginicastdev = virginica.std().round(2)
+virginicakurt = virginica.kurt().round(2)
+virginicaskew = virginica.skew().round(2)
 
 # Assigning functions for correlation of full dataset as well as by class
 iriscorr = iris.corr()
@@ -114,6 +122,8 @@ with open("iristemp.txt", "a") as f:
     print("\nVariable First Quartiles\n", iris25, sep = '', file = f)
     print("\nVariable Third Quartiles\n", iris75, sep = '', file = f)
     print("\nVariable Standard Deviation\n", irisstdev, sep = '', file = f)
+    print("\nVariable Kurtosis\n", iriskurt, sep = '', file = f)
+    print("\nVariable Skewness\n", irisskew, sep = '', file = f)
 
 # Printout to file of same analysis but just on Setosa Species
 
@@ -125,6 +135,8 @@ with open("iristemp.txt", "a") as f:
     print("\nVariable First Quartiles\n", setosa25, sep = '', file = f)
     print("\nVariable Third Quartiles\n", setosa75, sep = '', file = f)
     print("\nVariable Standard Deviation\n", setosastdev, sep = '', file = f)
+    print("\nVariable Kurtosis\n", setosakurt, sep = '', file = f)
+    print("\nVariable Skewness\n", setosaskew, sep = '', file = f)
     
 # Printout to file of same analysis but just on Versicolor Species
 
@@ -136,6 +148,8 @@ with open("iristemp.txt", "a") as f:
     print("\nVariable First Quartiles\n", versicolor25, sep = '', file = f)
     print("\nVariable Third Quartiles\n", versicolor75, sep = '', file = f)
     print("\nVariable Standard Deviation\n", versicolorstdev, sep = '', file = f)
+    print("\nVariable Kurtosis\n", versicolorkurt, sep = '', file = f)
+    print("\nVariable Skewness\n", versicolorskew, sep = '', file = f)
 
 # Printout to file of same analysis but just on Virginica Species
 
@@ -147,6 +161,8 @@ with open("iristemp.txt", "a") as f:
     print("\nVariable First Quartiles\n", virginica25, sep = '', file = f)
     print("\nVariable Third Quartiles\n", virginica75, sep = '', file = f)
     print("\nVariable Standard Deviation\n", virginicastdev, sep = '', file = f)
+    print("\nVariable Kurtosis\n", virginicakurt, sep = '', file = f)
+    print("\nVariable Skewness\n", virginicaskew, sep = '', file = f)
 
 # Printout to file of correlations with some titles
     print("*******************************\nIris Correlation\n", iriscorr, "\n", sep = '',file = f)

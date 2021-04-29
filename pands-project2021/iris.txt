@@ -47,6 +47,18 @@ sepalwidth     0.43
 petallength    1.76
 petalwidth     0.76
 
+Variable Kurtosis
+sepallength   -0.55
+sepalwidth     0.32
+petallength   -1.39
+petalwidth    -1.33
+
+Variable Skewness
+sepallength    0.30
+sepalwidth     0.35
+petallength   -0.29
+petalwidth    -0.12
+
 
 *******************************
 Setosa Dataset
@@ -94,6 +106,18 @@ sepallength    0.36
 sepalwidth     0.38
 petallength    0.18
 petalwidth     0.11
+
+Variable Kurtosis
+sepallength   -0.30
+sepalwidth     0.82
+petallength    0.97
+petalwidth     1.47
+
+Variable Skewness
+sepallength    0.14
+sepalwidth     0.12
+petallength    0.05
+petalwidth     1.17
 
 
 *******************************
@@ -143,6 +167,18 @@ sepalwidth     0.31
 petallength    0.47
 petalwidth     0.20
 
+Variable Kurtosis
+sepallength   -0.53
+sepalwidth    -0.37
+petallength    0.05
+petalwidth    -0.41
+
+Variable Skewness
+sepallength    0.11
+sepalwidth    -0.36
+petallength   -0.61
+petalwidth    -0.03
+
 
 *******************************
 Virginica Dataset
@@ -190,6 +226,18 @@ sepallength    0.64
 sepalwidth     0.32
 petallength    0.55
 petalwidth     0.27
+
+Variable Kurtosis
+sepallength    0.03
+sepalwidth     0.71
+petallength   -0.15
+petalwidth    -0.60
+
+Variable Skewness
+sepallength    0.12
+sepalwidth     0.37
+petallength    0.55
+petalwidth    -0.13
 *******************************
 Iris Correlation
              sepallength  sepalwidth  petallength  petalwidth
